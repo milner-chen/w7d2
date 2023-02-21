@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+
+    <a href="<%= new_user_url %>">Sign Up</a>
+    <a href="<%= new_session_url %>">Login In</a>
+
+  <% if flash.now[:errors] %>
+      <ul>
+          <% flash[:errors].each do |error| %>
+              <li><%= error %></li>
+          <% end %>
+      </ul>
+  <% end %>
+
+  <% if flash[:messages] %>
+    <ul>
+        <% flash[:messages].each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+  <% end %>
+
+    <%= yield %>
+  </body>
+</html>

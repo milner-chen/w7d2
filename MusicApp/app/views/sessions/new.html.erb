@@ -1,0 +1,15 @@
+<h2>Log in Bro</h2>
+
+<form action="<%= session_url %>" method="POST">
+<%# remember that session_url is singular %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Email:
+        <input type="text" name="user[email]">
+    </label><br>
+
+    <label>Password:
+        <input type="password" name="user[password]">
+    </label><br>
+
+    <input type="submit" value="Login">
+</form>
